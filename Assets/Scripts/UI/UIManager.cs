@@ -2,15 +2,20 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] private UIMainMenu mainMenu;
-    public UIMainMenu MainMenu { get { return mainMenu; } }
-    [SerializeField] private UIInventory inventory;
-    public UIInventory Inventory { get { return inventory; } }
-    [SerializeField] private UIStatus status;
-    public UIStatus Status { get { return status; } }
-
     private static UIManager instance;
     public static UIManager Instance { get { return instance; } }
+
+    [SerializeField] UIMainMenu mainMenu;
+    public UIMainMenu MainMenu { get { return mainMenu; } }
+
+    [SerializeField] UIInventory inventory;
+    public UIInventory Inventory { get { return inventory; } }
+
+    [SerializeField] UIStatus status;
+    public UIStatus Status { get { return status; } }
+
+    [SerializeField] Character character;
+    public Character Character { get { return character; } set { character = value; } }
 
     private void Awake()
     {

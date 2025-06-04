@@ -8,6 +8,7 @@ public class UIMainMenu : MonoBehaviour
     [SerializeField] TextMeshProUGUI nickNameNext;
     [SerializeField] TextMeshProUGUI iDText;
     [SerializeField] TextMeshProUGUI descriptionText;
+    [SerializeField] TextMeshProUGUI levelText;
     [SerializeField] TextMeshProUGUI goldText;
     [SerializeField] Image profileImage;
     [SerializeField] Button statusButton;
@@ -21,36 +22,44 @@ public class UIMainMenu : MonoBehaviour
         goBackButton.onClick.AddListener(OpenMainMenu);
     }
 
-    public void OpenStatus()
+    private void OpenStatus()
     {
         UIManager.Instance.Status.Open();
         CloseButton();
     }
 
-    public void OpenInventory()
+    private void OpenInventory()
     {
         UIManager.Instance.Inventory.Open();
         CloseButton();
     }
 
-    public void OpenMainMenu()
+    private void OpenMainMenu()
     {
         UIManager.Instance.Inventory.Close();
         UIManager.Instance.Status.Close();
         OpenButton();
     }
 
-    public void OpenButton()
+    private void OpenButton()
     {
         statusButton.gameObject.SetActive(true);
         inventoryButton.gameObject.SetActive(true);
         goBackButton.gameObject.SetActive(false);
     }
 
-    public void CloseButton()
+    private void CloseButton()
     {
         statusButton.gameObject.SetActive(false);
         inventoryButton.gameObject.SetActive(false);
         goBackButton.gameObject.SetActive(true);
+    }
+
+    public void SetInfo(Character character)
+    {
+        nickNameNext.text = $"{character.NickName}";
+        iDText.text = $"{character.ID}";
+        levelText.text = $"{character.Level}";
+        descriptionText.text = $"{character.Description}";
     }
 }

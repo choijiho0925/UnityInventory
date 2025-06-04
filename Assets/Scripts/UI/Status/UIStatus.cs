@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class UIStatus : MonoBehaviour
 {
@@ -17,5 +18,16 @@ public class UIStatus : MonoBehaviour
     public void Close()
     {
         uiStatus.SetActive(false);
+    }
+
+    public void SetInfo(Character character)
+    {
+        Condition condition = character.GetComponent<Condition>();
+        if (condition == null) return;
+
+        healthText.text = $"{condition.Health}hp";
+        reactionSpeedText.text = $"{condition.ReactionSpeed}ms";
+        iqText.text = $"{condition.IQLevel}IQ";
+        codingPowerText.text = $"{condition.CodingPower}CP";
     }
 }
