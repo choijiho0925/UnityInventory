@@ -23,7 +23,7 @@ public class ItemDataConsumable
 
 [CreateAssetMenu(fileName = "Item", menuName = "New Item")]
 
-public class ItemData : MonoBehaviour
+public class ItemData : ScriptableObject
 {
     [Header("Info")]
     public string itemName;

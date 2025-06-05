@@ -5,44 +5,20 @@ using UnityEngine.UI;
 
 public class ItemSlot : MonoBehaviour
 {
-    [SerializeField] ItemData item;
-
     [SerializeField] Button button;
     [SerializeField] Image icon;
-    [SerializeField] TextMeshProUGUI quantityText;
+    [SerializeField] TextMeshProUGUI amountText;
     [SerializeField] GameObject equipText;
 
-    [SerializeField] UIInventory inventory;
+    [SerializeField] ItemData itemData;
 
-    private int index;
-    public int Index { get {  return index; } }
-    private int quantity;
-    public int Quantity { get { return quantity; } }
+    private int amount;
     private bool equipped;
-    public bool Equipped { get { return equipped; } }
+    public bool Equipped { get { return equipped; } set { equipped = value; } }
 
     private void OnEnable()
     {
         equipText.SetActive(equipped);
-    }
-
-    public void Set()
-    {
-        icon.gameObject.SetActive(true);
-        icon.sprite = item.itemIcon;
-        quantityText.text = quantity > 1 ? quantity.ToString() : string.Empty;
-
-        if (equipText != null)
-        {
-            equipText.SetActive(equipped);
-        }
-    }
-
-    public void Clear()
-    {
-        item = null;
-        icon.gameObject.SetActive(false);
-        quantityText.text = string.Empty;
     }
 
     public void OnClickButton()
