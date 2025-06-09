@@ -1,23 +1,19 @@
 using System;
 using UnityEngine;
 
-public enum ItemType
+public enum EquipTpye
 {
-    Consumable,
-    Equipment,
-}
-
-public enum ConsumableType
-{
-    Speed,
-    JumpForce
+    Health,
+    ReactionSpeed,
+    IQ,
+    CodingPower
 }
 
 [Serializable]
 
-public class ItemDataConsumable
+public class EquipData
 {
-    public ConsumableType type;
+    public EquipTpye type;
     public float value;
 }
 
@@ -29,12 +25,7 @@ public class ItemData : ScriptableObject
     public string itemName;
     public string itemDescription;
     public Sprite itemIcon;
-    public ItemType itemType;
 
-    [Header("Stacking")]
-    public bool canStack;
-    public int maxStackAmount;
-
-    [Header("Consumable")]
-    public ItemDataConsumable[] consumables;
+    [Header("EquipData")]
+    public EquipData[] equipData;
 }

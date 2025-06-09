@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class Character : MonoBehaviour
@@ -17,5 +16,15 @@ public class Character : MonoBehaviour
         ID = id;
         Level = level;
         Description = description;
+    }
+
+    public void Equip()
+    {
+
+    }
+
+    public void UnEquip()
+    {
+
     }
 }

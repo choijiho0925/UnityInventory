@@ -1,6 +1,5 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
 
 public class UIStatus : MonoBehaviour
 {
