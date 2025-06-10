@@ -4,6 +4,7 @@ public class Character : MonoBehaviour
 {
     public Condition condition;
     public Controller controller;
+    public ConditionController conditionController;
 
     public string NickName { get; private set; }
     public string ID { get; private set; }
@@ -18,7 +19,7 @@ public class Character : MonoBehaviour
         Description = description;
     }
 
-    public void Equip(ItemSlot slot)
+    private void Equip(ItemSlot slot)
     {
         if (slot.data == null)
         {
@@ -30,15 +31,29 @@ public class Character : MonoBehaviour
             {
                 itemSlot.Equipped = false;
                 itemSlot.OnEnable();
-
-                slot.Equipped = true;
-                slot.OnEnable();
             }
+            slot.Equipped = true;
+            slot.OnEnable();
+            GameManager.Instance.Player.conditionController.equipItem = slot.data;
         }
     }
 
-    public void UnEquip()
+    private void UnEquip(ItemSlot slot)
     {
+        slot.Equipped = false;
+        slot.OnEnable();
+        GameManager.Instance.Player.conditionController.equipItem = null;
+    }
 
+    public void EquipTool(ItemSlot slot)
+    {
+        if (slot.Equipped)
+        {
+            UnEquip(slot);
+        }
+        else
+        {
+            Equip(slot);
+        }
     }
 }

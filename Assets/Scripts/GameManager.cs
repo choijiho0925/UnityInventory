@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject character;
+
     private static GameManager instance;
     public static GameManager Instance { get { return instance; } }
 
@@ -24,9 +26,7 @@ public class GameManager : MonoBehaviour
 
     private void SetData()
     {
-        GameObject playerObj = new GameObject("Player");
-        player = playerObj.AddComponent<Character>();
-        player.gameObject.AddComponent<Condition>();
+        player = character.GetComponent<Character>();
 
         Player.SetData("게이머", "최지호", "스탠다드", "프로게이머를 하다가 전역 후 코딩 입문한 코린이");
 

@@ -3083,6 +3083,7 @@ GameObject:
   - component: {fileID: 1187019573}
   - component: {fileID: 1187019575}
   - component: {fileID: 1187019574}
+  - component: {fileID: 1187019576}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -3192,6 +3193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   condition: {fileID: 1187019575}
   controller: {fileID: 1187019574}
+  conditionController: {fileID: 1187019576}
 --- !u!114 &1187019574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3216,6 +3218,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd60484534805e9459290129b103ea14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 95
+  reactionSpeed: 203
+  IQ: 130
+  codingPower: 30
+--- !u!114 &1187019576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187019568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4585af3dbba251d499e673c3833ce8cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  equipItem: {fileID: 0}
+  beforeItem: {fileID: 0}
 --- !u!1 &1201125335
 GameObject:
   m_ObjectHideFlags: 0
@@ -5539,6 +5559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76199261c1be99445a4c8277deafdf8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character: {fileID: 1187019568}
 --- !u!1 &1931388749
 GameObject:
   m_ObjectHideFlags: 0

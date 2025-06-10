@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Condition : MonoBehaviour
 {
-    private int health = 100;
+    private int health = 95;
     public int Health { get { return health; } set { health = Mathf.Clamp(value, 0, 100); } }
     private int reactionSpeed = 203;
     public int ReactionSpeed { get { return reactionSpeed; } set { reactionSpeed = Mathf.Clamp(value, 0, 1000); } }

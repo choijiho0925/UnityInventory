@@ -25,7 +25,9 @@ public class ItemSlot : MonoBehaviour
 
     public void OnClickButton()
     {
-        GameManager.Instance.Player.Equip(this);
+        GameManager.Instance.Player.EquipTool(this);
+        GameManager.Instance.Player.conditionController.CheckItem();
+        UIManager.Instance.Status.SetInfo(GameManager.Instance.Player);
     }
 
     public void SetData(ItemData itemData)
