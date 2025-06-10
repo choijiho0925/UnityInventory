@@ -123,9 +123,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5273665428372975143}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ItemSlot, Assembly-CSharp
-        m_MethodName: OnClickButton
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -149,7 +149,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 6256368509023616981}
   icon: {fileID: 3460459529420302143}
-  amountText: {fileID: 0}
   equipText: {fileID: 9179396591728373077}
   data: {fileID: 0}
 --- !u!1 &6071002307603423588

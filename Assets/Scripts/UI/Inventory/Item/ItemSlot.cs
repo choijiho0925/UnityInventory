@@ -8,7 +8,7 @@ public class ItemSlot : MonoBehaviour
     [SerializeField] Image icon;
     [SerializeField] GameObject equipText;
 
-    [SerializeField] public ItemData data;
+    public ItemData data;
 
     private bool equipped;
     public bool Equipped { get { return equipped; } set { equipped = value; } }
@@ -18,14 +18,14 @@ public class ItemSlot : MonoBehaviour
         GetComponent<Button>().onClick.AddListener(OnClickButton);
     }
 
-    private void OnEnable()
+    public void OnEnable()
     {
         equipText.SetActive(equipped);
     }
 
     public void OnClickButton()
     {
-        
+        GameManager.Instance.Player.Equip(this);
     }
 
     public void SetData(ItemData itemData)

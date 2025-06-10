@@ -18,9 +18,23 @@ public class Character : MonoBehaviour
         Description = description;
     }
 
-    public void Equip()
+    public void Equip(ItemSlot slot)
     {
+        if (slot.data == null)
+        {
+            return;
+        }
+        else
+        {
+            foreach (var itemSlot in UIManager.Instance.Inventory.GetAllSlots())
+            {
+                itemSlot.Equipped = false;
+                itemSlot.OnEnable();
 
+                slot.Equipped = true;
+                slot.OnEnable();
+            }
+        }
     }
 
     public void UnEquip()

@@ -58,6 +58,11 @@ public class UIInventory : MonoBehaviour
         }
     }
 
+    public List<ItemSlot> GetAllSlots()
+    {
+        return items;
+    }
+
     private void SetTotalText()
     {
         totalSlotCount.text = $"/ {slotCount}";
